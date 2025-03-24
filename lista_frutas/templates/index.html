@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de frutas</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.css')}}">
+</head>
+<body>
+    
+    <h1 style="text-align: center;">{{titulo}}</h1>
+    <hr>
+
+    <form action="{{url_for('autenticar')}}" method="post">
+        <label>Fruta</label>
+        <input type="text" id="fruta" name="fruta" required>
+        <button>Adicionar</button>
+    </form>
+
+    <br>
+    <ul>
+        {% for fruta in frutas %}
+        <li>{{fruta}}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
